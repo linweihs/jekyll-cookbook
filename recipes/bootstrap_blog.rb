@@ -4,6 +4,9 @@
 # store Gemfile in your jekyll git
 # Install gem using bundle installl
 # All you need is bundler here
+#
+include_recipe "rbenv::default"
+include_recipe "rbenv::ruby_build"
 
 rbenv_gem 'bundler' do
   ruby_version node['jekyll']['rbenv']['version']
