@@ -7,6 +7,6 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe 'boostrap_blog.rb'
-include_recipe 'jekyll_build.rb'
-include_recipe 'setup_webserver.rb'
+include_recipe 'jekyll-cookbook::bootsrap_blog'
+include_recipe 'jekyll-cookbook::jekyll_build'
+include_recipe 'jekyll-cookbook::setup_webserver'
