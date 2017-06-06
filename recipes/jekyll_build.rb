@@ -22,7 +22,7 @@ else
 end
 
 rbenv_execute 'Deploy Jekyll blog' do
-  rbenv_version node['jekyll']['rbenv']['version']
+  ruby_version node['jekyll']['rbenv']['version']
   cwd node['jekyll']['deploy_directory']
   command %{ bundle install && source /etc/profile.d/rbenv.sh && #{jekyll_command} }
 end

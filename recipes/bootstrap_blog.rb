@@ -6,7 +6,7 @@
 # All you need is bundler here
 
 rbenv_gem 'bundler' do
-  rbenv_version node['jekyll']['rbenv']['version']
+  ruby_version node['jekyll']['rbenv']['version']
 end
 
 #
