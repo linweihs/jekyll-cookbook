@@ -16,13 +16,13 @@ end
 unless node['jekyll']['options'].empty?
   options = node['jekyll']['options'].each { |opt| opt.prepend('--')}
   options = options.join(' ')
-  jekyll_command = "bundle exec jekyll #{options}"
+  jekyll_command = "bundle exec jekyll build #{options}"
 else
-  jekyll_command = "bundle exec jekyll"
+  jekyll_command = "bundle exec jekyll build"
 end
 
 rbenv_execute 'Deploy Jekyll blog' do
   ruby_version node['jekyll']['rbenv']['version']
   cwd node['jekyll']['deploy_directory']
-  command %{ bundle install && source /etc/profile.d/rbenv.sh && #{jekyll_command} }
+  command %{ bundle install && #{jekyll_command} }
 end
