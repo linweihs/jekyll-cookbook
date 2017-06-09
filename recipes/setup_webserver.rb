@@ -3,11 +3,11 @@
 #
 
 include_recipe "nodejs"
-
+package 'npm'
 #
 # app.js
 #
-cookbook_file '#{node['jekyll']['deploy_directory']}/app.js' do
+cookbook_file "#{node['jekyll']['deploy_directory']}/app.js" do
   source 'apps/nodejs/app.js'
   owner node['jekyll']['user']
   group node['jekyll']['group']
@@ -18,7 +18,7 @@ end
 #
 # package.json
 #
-cookbook_file '#{node['jekyll']['deploy_directory']}/package.json' do
+cookbook_file "#{node['jekyll']['deploy_directory']}/package.json" do
   source 'apps/nodejs/package.json'
   owner node['jekyll']['user']
   group node['jekyll']['group']
