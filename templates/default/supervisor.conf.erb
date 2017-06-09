@@ -1,0 +1,7 @@
+[program:test]
+user=<%= node['jekyll']['user'] %>
+directory=<%= node['jekyll']['deploy_directory'] %>
+command=node app.js 4000
+autorestart=true
+stdout_logfile=<%= node['jekyll']['deploy_directory'] %>/supervisor_out.log
+stderr_logfile=<%= node['jekyll']['deploy_directory'] %>/supervisor_err.log
